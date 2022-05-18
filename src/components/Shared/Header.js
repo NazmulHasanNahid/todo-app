@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
      const navItem = <>
      <li><NavLink to="/">Home</NavLink> </li>
+     <li><NavLink to="/addtodo">Add Todo</NavLink> </li>
      <li><NavLink to="/login">Login</NavLink></li>
      </>
   return (

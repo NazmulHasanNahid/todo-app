@@ -1,9 +1,10 @@
 import React from 'react';
+import Todo from '../Todo/Todo';
 
 const Home = () => {
      return (
-          <div>
-             <h3>this is home</h3>  
+          <div className='lg:p-10'>
+             <Todo/>
           </div>
      );
 };
