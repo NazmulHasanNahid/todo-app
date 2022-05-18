@@ -1,9 +1,13 @@
 import React from 'react';
+import auth from '../../firebase.init';
+import GoogleSignin from './GoogleSignin';
+
 
 const Login = () => {
+
      return (
           <div>
-              <h3>this is login</h3> 
+          <GoogleSignin/>
           </div>
      );
 };

@@ -1,12 +1,40 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {  signOut } from 'firebase/auth';
+
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
+import { AiOutlineUser } from "react-icons/ai";
 
 const Header = () => {
-     const navItem = <>
-     <li><NavLink to="/">Home</NavLink> </li>
-     <li><NavLink to="/addtodo">Add Todo</NavLink> </li>
-     <li><NavLink to="/login">Login</NavLink></li>
-     </>
+  const [user] = useAuthState(auth);
+  const handleSignOut = () =>{
+    signOut(auth)
+  }
+  const navItem = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>{" "}
+      </li>
+      { user && <li>
+        <NavLink to="/addtodo">Add Todo</NavLink>{" "}
+      </li>}
+
+     { user && <li>
+        <Link to="/">
+          <AiOutlineUser />
+          {user?.email}
+        </Link>{" "}
+      </li>}
+      <li>
+        {user ? (
+          <button className="btn btn-ghost" onClick={handleSignOut}>sign out</button>
+        ) : (
+          <NavLink to="/login">Login</NavLink>
+        )}
+      </li>
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100 justify-center">
@@ -35,16 +63,13 @@ const Header = () => {
               {navItem}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl" to="/">Todo App</Link>
+          <Link className="btn btn-ghost normal-case text-xl" to="/">
+            Todo App
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
-            {navItem}
-            
-            
-          </ul>
+          <ul className="menu menu-horizontal p-0">{navItem}</ul>
         </div>
-        
       </div>
     </div>
   );
