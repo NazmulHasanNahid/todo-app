@@ -6,7 +6,7 @@ const useTodos = () =>{
           fetch('https://powerful-mesa-99940.herokuapp.com/todos')
            .then(res => res.json())
            .then(data => setTodos(data))
-     },[])
+     },[todos])
      return [todos , setTodos]
 }
 

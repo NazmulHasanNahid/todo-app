@@ -17,7 +17,7 @@ const ShowTodo = ({ todo}) => {
            if (data.deletedCount > 0) {
              const remaining = todos.filter((todo) => todo._id !== id);
              setTodos(remaining);
-             toast("Todos Deleted please refresh this page");
+             toast("Todo Deleted");
            }
          });
      }
