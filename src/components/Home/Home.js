@@ -3,7 +3,7 @@ import Todo from '../Todo/Todo';
 
 const Home = () => {
      return (
-          <div className='lg:p-10'>
+          <div className='container mx-auto'>
              <Todo/>
           </div>
      );

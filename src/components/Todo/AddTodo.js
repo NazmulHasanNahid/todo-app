@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const AddTodo = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
-    const url = `http://localhost:5000/todo`;
+    const url = `https://powerful-mesa-99940.herokuapp.com/todo`;
     fetch(url, {
       method: "POST",
       headers: {

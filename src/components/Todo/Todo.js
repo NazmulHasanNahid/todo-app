@@ -7,7 +7,7 @@ const Todo = () => {
      return (
           <div>
             <h2 className='text-center text-2xl text-gray-700 font-bold'>Todos</h2>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-4 mt-6 '>
+            <div className='grid grid-cols-1 lg:grid-cols-3  gap-5 m-2 '>
                  {
                       todos.map(todo => <ShowTodo  todo={todo} key={todo._id}></ShowTodo>)
                  }

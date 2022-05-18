@@ -8,7 +8,7 @@ const ShowTodo = ({ todo}) => {
   const handleDelet = (id) => {
      const proceed = window.confirm("Are you sure you want to delet");
      if (proceed) {
-       const url = `http://localhost:5000/todos/${id}`;
+       const url = `https://powerful-mesa-99940.herokuapp.com/todos/${id}`;
        fetch(url, {
          method: "DELETE",
        })
@@ -25,7 +25,7 @@ const ShowTodo = ({ todo}) => {
   
   return (
     <div>
-      <div class="card w-96 bg-primary text-primary-content">
+      <div class="card lg:w-100 mt-3  bg-primary text-primary-content">
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
           <p>{description}</p>
@@ -35,6 +35,8 @@ const ShowTodo = ({ todo}) => {
         </div>
       </div>
     </div>
+
+
   );
 };
 
