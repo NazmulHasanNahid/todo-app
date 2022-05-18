@@ -26,6 +26,7 @@ const GoogleSignin = () => {
         }, [error]);
      return (
           <div className='flex justify-center h-screen items-center'>
+               
                <button  onClick={()=>signInWithGoogle() } class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><img width={40} src={img} alt="" /> sign in </button>
           </div>
      );

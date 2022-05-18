@@ -27,8 +27,8 @@ const ShowTodo = ({ todo}) => {
     <div>
       <div class="card lg:w-100 mt-3  bg-primary text-primary-content">
         <div class="card-body">
-          <h2 class="card-title">{name}</h2>
-          <p>{description}</p>
+          <h2 class="card-title">Task : {name}</h2>
+          <p>Description : {description}</p>
           <div class="card-actions justify-end">
             <button onClick={()=>handleDelet(_id)} class="btn">Delete</button>
           </div>
