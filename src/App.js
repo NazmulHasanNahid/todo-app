@@ -1,9 +1,16 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Header from "./components/Shared/Header";
 
 function App() {
   return (
     <div>
-      <h2 className="text-3xl">hello</h2>
-      <button class="btn btn-primary">Button</button>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
 
     </div>
   );
